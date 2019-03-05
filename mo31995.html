@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+    <title>ProjectRizal | MO3-1995</title>
+
+    <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/css/style3.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="Assets/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+    <header class="header-home">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Life</a></li>
+            <li><a href="">Works</a></li>
+            <li><a href="">Philosophies</a></li>
+            <li class="active1"><a href="laws.html">Laws</a></li>
+            <li><a href="">Trivias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="header">
+        <span class="content-head">CHED Memorandum No. 3, s. 1995</span>
+    </div>
+    <div class="law-content">
+        <div class="column">
+            <img src="Assets/images/law1995.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <p>Enforcing strict compliance to Memorandum Order No. 247.</p>
+          </div>
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+            <p>COMMISSION OF HIGHER EDUCATION</p>
+
+<p>Office of the President of the Philippines</p>
+
+<p>January 13, 1995</p>
+
+<p>CHED MEMORANDUM</p>
+<p>No. 3, s. 1995</p>
+
+<p>To:</p>
+<p>Head of State Colleges and Universities 
+Head of Private Schools, Colleges and Universities 
+Office of the President Memorandum Order No. 247 </p>
+
+<p>Re: Implementation of Republic Act No. 1425</p>
+
+<p>Enclosed is a copy of Memorandum Order No. 247 dated December 26, from the Office of the President of the Philippines entitled, "Directing Secretary of Education, Culture and Sports and the CHAIRMAN OF COMMISSION ON HIGHER EDUCATION to fully implement the Republic Act No. 1425 entitled "An Act to include in the curricula of all public and private schools, colleges and universities, courses on the Life, Works and Writings of Jose Rizal, particularly his novels, Noli Me Tangere and El Filibusterismo, authorizing the printing and distribution thereof and for other purposes" for guidance of all concerned.
+Strict compliance therewith is requested.</p>
+<p>(sgd) MONA D. VALISNO</p>
+<p>Commissioner</p>
+<p>Officer-in-Charge</p>
+          </div>
+
+          <div class="footer">
+            Reference: http://joserizal.ph/lw05.html
+          </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+
+<script>
+
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+
+</script>
+
+</html>
