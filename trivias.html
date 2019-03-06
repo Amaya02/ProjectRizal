@@ -8,17 +8,18 @@
 
     <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
 
-    <title>ProjectRizal | MO3-1995</title>
+    <title>ProjectRizal | TRIVIAS</title>
 
     <link href="Assets/css/bootstrap.css" rel="stylesheet" />
     <link href="Assets/css/style3.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="Assets/js/bootstrap.js"></script>
+    <script src="Assets/js/bootstrap.js"></script>
 
 </head>
 <body>
 
-    <header class="header-home">
+
+  <header class="header-home">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -35,8 +36,8 @@
             <li><a href="life.html">Life</a></li>
             <li><a href="works.html">Works</a></li>
             <li><a href="philosophies.html">Philosophies</a></li>
-            <li class="active1"><a href="laws.html">Laws</a></li>
-            <li><a href="trivias.html">Trivias</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li class="active1"><a href="trivias.html">Trivias</a></li>
           </ul>
         </div>
       </div>
@@ -44,56 +45,66 @@
   </header>
 
   <div class="main-wrapper">
-    <div class="header">
-        <span class="content-head">CHED Memorandum No. 3, s. 1995</span>
+    <div class="head">
+        <img src="Assets/images/trivia.jpg">
     </div>
     <div class="law-content">
-        <div class="column">
-            <img src="Assets/images/law1995.jpg" alt="sample33" />
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+            <h1>
+              Trivias about Jose Rizal’s LIFE, WORKS, and DEATH.
+            </h1>
           </div>
           <div class="column" style="background-color:#fff;">
-            <h1>Enforcing strict compliance to Memorandum Order No. 247.</h1>
-          </div>
-          <div class="onecolumn" style="background-color:#f2d8b3;">
+            <img src="Assets/images/trivia1.jpg" alt="sample33" />
+      </div>
+        <div class="column">
             <div class="hideme">
-              <p><b>COMMISSION OF HIGHER EDUCATION</b></p>
-
-              <p><b>Office of the President of the Philippines</b></p>
-
-              <p class="right">January 13, 1995</p>
-
-              <p class="left">CHED MEMORANDUM</p>
-              <p class="left">No. 3, s. 1995</p>
-
-              <p class="left">To:</p>
-              <p class="left">Head of State Colleges and Universities <br>
-              Head of Private Schools, Colleges and Universities <br>
-              Office of the President Memorandum Order No. 247 </p>
-
-              <p class="left">Re: Implementation of Republic Act No. 1425</p>
-
-              <p class="left indent">1. Enclosed is a copy of Memorandum Order No. 247 dated December 26, from the Office of the President of the Philippines entitled, "Directing Secretary of Education, Culture and Sports and the CHAIRMAN OF COMMISSION ON HIGHER EDUCATION to fully implement the Republic Act No. 1425 entitled "An Act to include in the curricula of all public and private schools, colleges and universities, courses on the Life, Works and Writings of Jose Rizal, particularly his novels, Noli Me Tangere and El Filibusterismo, authorizing the printing and distribution thereof and for other purposes" for guidance of all concerned.
-              <br>2. Strict compliance therewith is requested.</p>
-              <p class="right">(sgd) MONA D. VALISNO</p>
-              <p class="right">Commissioner</p>
-              <p class="right">Officer-in-Charge</p>
+              <h1>Jose Rizal was a naughty boy in the famous “Moth and Lamp” story.</h1>
             </div>
           </div>
-
-          <div class="footer">
-            Reference: http://joserizal.ph/lw05.html
+          <div class="column">
+            <div class="hideme">
+              <h1>The young Jose Rizal experimented with drugs.</h1>
+            </div>
           </div>
+          <div class="column" style="background-color:#fff;">
+            <img src="Assets/images/trivia2.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <img src="Assets/images/trivia3.jpg" alt="sample33" />
+          </div>
+          <div class="column">
+            <div class="hideme">
+              <h1>There are three animals named after Rizal</h1>
+            </div>
+          </div>
+          <div class="column">
+            <div class="hideme">
+              <h1>The Rizal monument in Luneta was not made by a Filipino artist.</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <img src="Assets/images/trivia4.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <img src="Assets/images/trivia5.jpg" alt="sample33" />
+          </div>
+          <div class="column">
+            <div class="hideme">
+              <h1>He was already a terrific sculptor even at a very young age.</h1>
+            </div>
+          </div>
+      <div class="footer">
+        Reference: https://filipiknow.net/jose-rizal-facts/
+      </div>
     </div>
-
   </div>
-
-  
 
 </body>
 
 <script>
 
-    $(document).ready(function() {
+  $(document).ready(function() {
     
     /* Every time the window is scrolled ... */
     $(window).scroll( function(){
@@ -117,7 +128,7 @@
     
 });
 
-function checkScroll(){
+    function checkScroll(){
     var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
 
     if($(window).scrollTop() > startY){
@@ -132,6 +143,12 @@ if($('.navbar').length > 0){
         checkScroll();
     });
 }
+
+$("figure").mouseleave(
+    function() {
+      $(this).removeClass("hover");
+    }
+  );
 
 </script>
 

@@ -1,5 +1,6 @@
 body{
   background-color: #fff;
+  font-size: 15px;
 }
 
 
@@ -195,6 +196,15 @@ nav .container{
   width: 50%;
   height: 500px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.column p,
+.column h1{
+  padding: 20px;
 }
 
 .onecolumn {
@@ -204,19 +214,8 @@ nav .container{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   margin-top: 20px;
   margin-bottom: 20px;
-}
+  padding: 35px 70px; 
 
-.column p{
-  padding: 20px;
-}
-
-.column h1{
-  padding: 20px;
-  padding-top: 30%;
-}
-
-.onecolumn p{
-  padding: 20px; 
 }
 
 .column img {
@@ -237,6 +236,23 @@ nav .container{
   content: "";
   display: table;
   clear: both;
+}
+
+.hideme
+{
+    margin-top:200px;
+}
+
+.left{
+  text-align: left;
+}
+
+.right{
+  text-align: right;
+}
+
+.indent{
+  padding-left: 25px;
 }
 
 /* QUIZ */
@@ -267,7 +283,7 @@ nav .container{
   display: block;
   margin-bottom: 10px;
 }
-button{
+.quiz-but{
   font-family: 'Work Sans', sans-serif;
     font-size: 15px;
     background-color: #a23419;
@@ -280,7 +296,7 @@ button{
     margin-top: 15%;
     transition: all 0.4s ease-out;
 }
-button:hover{
+.quiz-but:hover{
     background-color: #c6612b;
 }
 
@@ -288,6 +304,29 @@ button:hover{
   font-size: 20px;
   padding-bottom: 30px;
   text-transform: uppercase;
+}
+
+.start-wrapper h1{
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  padding: 25px;
+}
+
+.start-wrapper button{
+  margin-top: 40px;
+}
+
+.start-wrapper p{
+  font-size: 20px; 
+}
+
+.start-wrapper{
+  display: block;
+}
+
+.quiz-wrapper{
+  display: none;
 }
 
 
@@ -338,6 +377,11 @@ button:hover{
   .footer{
     height: 100px;
   }
+
+  .onecolumn{
+  padding: 20px; 
+}
+
 }
 
 @media (max-width: 426px) {
