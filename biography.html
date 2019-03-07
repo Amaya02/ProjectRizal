@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+    <title>ProjectRizal | BIOGRAPHY</title>
+
+    <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/css/style3.css" rel="stylesheet" />
+    <script src="Assets/js/jquery.min.js"></script>
+  	<script src="Assets/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+    <header class="header-home">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li  class="active1"><a href="life.html">Life</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="philosophies.html">Philosophies</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li><a href="trivias.html">Trivias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="header">
+        <span class="content-head">Biography of Rizal</span>
+    </div>
+    <div class="law-content">
+        <div class="column">
+            <img src="Assets/images/joserizal.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <h1>Dr. Jose Rizal - National Hero of the Philippines</h1>
+          </div>
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+           <div class="hideme">
+
+            <p class="left">Dr. Jose Protacio Rizal (José Protasio Rizal Mercado Y Alonso Realonda) was born in the town of Calamba, Laguna on 19th June 1861. The second son and the seventh among the eleven children of Francisco Mercado and Teodora Alonso.
+            With his mother as his first teacher, he began his early education at home and continued in Biñan, Laguna. He entered a Jesuit-run Ateneo Municipal de Manila in 1872 and obtained a bachelor's degree with highest honors in 1876. He studied medicine at the University of Santo Tomas but had to stop because he felt that the Filipino students were being discriminated by their Dominican tutors. He went to Madrid at Universidad Central de Madrid and in 1885 at the age of 24, he finished his course in Philosophy and Letters with a grade of "Excellent".
+            </p>
+
+            <p class="left">He took graduate studies in Paris, France & Heidelberg, Germany. He also studied painting, sculpture, he learned to read and write in at least 10 languages.
+            Rizal was a prolific writer and was anti-violence. He rather fight using his pen than his might. Rizal's two books "Noli Me Tangere" (Touch Me Not) which he wrote while he was in Berlin, Germany in 1887 and "El Filibusterismo" (The Rebel) in Ghent, Belgiun in 1891 exposed the cruelties of the Spanish friars in the Philippines, the defects of the Spanish administration and the vices of the clergy, these books told about the oppression of the Spanish colonial rule. These two books made Rizal as a marked man to the Spanish friars.
+            </p>
+
+            <p class="left">In 1892 when Rizal returned to the Philippines, he formed La Liga Filipina, a non-violent reform society of patriotic citizen and a forum for Filipinos to express their hopes for reform, to promote progress through commerce, industry and agriculture and freedom from the oppressive Spanish colonial administration.
+            On July 6, 1892, he was imprisoned in Fort Santiago, on the charge of instigating unrest against Spain, he was exiled to Dapitan, in northwestern Mindanao. He remained in exile for four years, while he was in political exile in Dapitan, he practices medicine, he established a school for boys, promoted community development projects, he applied his knowledge in engineering by constructing a system of waterworks in order to furnish clean water to the townspeople. In Dapitan he also met, fell in love and lived with Josephine Bracken.
+            </p>
+
+            <p class="left">In 1896, the Katipunan, a nationalist secret society launched a revolt against the Spaniards, although Jose Rizal had no connection with the organization, his enemies were able to linked him with the revolt. To avoid being involved in the move to start a revolution, he asked Governor Ramon Blanco to send him to Cuba but instead he was brought back to Manila and jailed for the second time in Fort Santiago.
+            On December 26, 1896, after a trial, Rizal was sentenced to die, he was convicted of rebellion, sedition, and of forming illegal association. On the eve of his execution while confined in Fort Santiago, Rizal wrote a poem Mi Ultimo Adios (My Last Farewell) and hid it inside the gas burner and gave the gas burner to his sister Trinidad and his wife Josephine.
+            </p>
+
+            <p class="left">He was executed on December 30, 1896 at the age of 35 by a firing squad at Bagumbayan, now known as Luneta Park in Manila.
+            Jose Rizal was a man of many accomplishments - a linguist, a novelist, a poet, a scientist, a doctor, a painter, an educator, a reformer and a visionary, he left his people his greatest patriotic poem, Mi Ultimo Adios to serve as an inspiration for the next generations.
+            </p>
+
+           </div>
+          </div>
+
+          <div class="footer">
+            Reference: https://owlcation.com/humanities/jose-rizal
+          </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+
+<script>
+
+  $(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'margin-top':'0'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+
+</script>
+
+</html>

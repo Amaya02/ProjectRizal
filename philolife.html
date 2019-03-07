@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+    <title>ProjectRizal | Philosophies of Life</title>
+
+    <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/css/style3.css" rel="stylesheet" />
+    <script src="Assets/js/jquery.min.js"></script>
+  	<script src="Assets/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+    <header class="header-home">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="life.html">Life</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li class="active1"><a href="philosophies.html">Philosophies</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li><a href="trivias.html">Trivias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="header">
+        <span class="content-head">Philosophies of Life</span>
+    </div>
+    <div class="law-content">
+        <div class="column">
+            <img src="Assets/images/life.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <h1>PHILOSOPHY may be defined as the study and pursuit of facts which deal with the ultimate reality or causes of things as they affect life.</h1>
+          </div>
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+           <div class="hideme">
+        
+            <p class="left">The philosophy of a country like the Philippines is made up of the intricate and composite interrelationship of the life histories of its people; in other word, the philosophy of our nation would be strange and undefinable if we do not delve into the past tied up with the notable life experiences of the representative personalities of our nation.</p>
+
+            <p class="left">Being one of the prominent representatives of Filipino personalities, Jose Rizal is a fit subject whose life philosophy deserves to be recognized.</p>
+
+            <p class="left">Having been a victim of Spanish brutality early in his life in Calamba, Rizal had thus already formed the nucleus of an unfavorable opinion of Castillian imperialistic administration of his country and people.</p>
+
+            <p class="left">Pitiful social conditions existed in the Philippines as late as three centuries after his conquest in Spain, with agriculture, commerce, communications and education languishing under its most backward state. It was because of this social malady that social evils like inferiority complex, cowardice, timidity and false pride pervaded nationally and contributed to the decay of social life. This stimulated and shaped Rizal’s life phylosophy to be to contain if not eliminate these social ills.</p>
+
+           </div>
+          </div>
+
+          <div class="footer">
+            Reference: http://www.joserizal.ph/ph01.html
+          </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+
+<script>
+
+  $(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'margin-top':'0'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+
+</script>
+
+</html>

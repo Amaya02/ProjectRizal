@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+    <title>ProjectRizal | Ethical Philosophy</title>
+
+    <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/css/style3.css" rel="stylesheet" />
+    <script src="Assets/js/jquery.min.js"></script>
+  	<script src="Assets/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+    <header class="header-home">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="life.html">Life</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li class="active1"><a href="philosophies.html">Philosophies</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li><a href="trivias.html">Trivias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="header">
+        <span class="content-head">Ethical Philosophy</span>
+    </div>
+    <div class="law-content">
+        <div class="column">
+            <img src="Assets/images/ethical.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <h1>ETHICAL. Relating to moral principles or the branch of knowledge dealing with these.</h1>
+          </div>
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+            <div class="hideme">
+			
+              <p class="left">The study of human behavior as to whether it is good or bad or whether it is right or wrong is that science upon which Rizal’s ethical philosophy was based. The fact that the Philippines was under Spanish domination during Rizal’s time led him to subordinate his philosophy to moral problems. This trend was much more needed at that time because the Spaniards and the Filipinos had different and sometimes conflicting morals.</p>
+		   
+              <p class="left">The moral status of the Philippines during this period was one with a lack of freedom, one with predominance of foreign masters, one with an imposition of foreign religious worship, devotion, homage and racial habits. This led to moral confusion among the people, what with justice being stifled, limited or curtailed and the people not enjoying any individual rights.</p>
+		   
+			  <p class="left">To bolster his ethical philosophy, Dr. Rizal had recognized not only the forces of good and evil, but also the tendencies towards good and evil. As a result, he made use of the practical method of appealing to the better nature of the conquerors and of offering useful methods of solving the moral problems of the conquered.</p>
+		   
+			  <p class="left">To support his ethical philosophy in life, Rizal:</p>
+			</div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>Censured the friars for abusing the advantage of their position as spiritual leaders and the ignorance and fanaticism of the natives;</p>
+			</div>
+          </div>
+          <div class="column" style="background-color:#fbd226;">
+            <div class="hideme">
+              <h1>NUMBER 1</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#84d0c4;">
+            <div class="hideme">
+              <h1>NUMBER 2</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>Counseled the Filipinos not to resent a defect attributed to them but to accept same as reasonable and just;</p>
+			</div>
+		  </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>Advised the masses that the object of marriage was the happiness and love of the couple and not financial gain;</p>
+			</div>
+          </div>
+          <div class="column" style="background-color:#d6f1c4;">
+            <div class="hideme">
+              <h1>NUMBER 3</h1>
+            </div>
+            </div>
+          <div class="column" style="background-color:#98c4d1;">
+            <div class="hideme">
+              <h1>NUMBER 4</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>Censured the priests who preached greed and wrong morality; and</p>
+            </div>
+          </div>
+		  <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>Advised every one that love and respect for parents must be strictly observed.</p>
+			</div>
+          </div>
+		  <div class="column" style="background-color:#98c4f1;">
+            <div class="hideme">
+              <h1>NUMBER 5</h1>
+            </div>
+          </div>
+
+          <div class="footer">
+            Reference: http://www.joserizal.ph/ph01.html
+          </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+
+<script>
+
+  $(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'margin-top':'0'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+
+</script>
+
+</html>

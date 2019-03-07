@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="">
+
+      <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+      <title>ProjectRizal | QUIZ</title>
+
+      <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+      <link href="Assets/css/style3.css" rel="stylesheet" />
+      <script src="Assets/js/jquery.min.js"></script>
+    	<script src="Assets/js/bootstrap.js"></script>
+
+  </head>
+  <body>
+
+    <header class="header-home">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+          </div>
+          <div id="navbar3" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active1"><a href="life.html">Life</a></li>
+              <li><a href="works.html">Works</a></li>
+              <li><a href="philosophies.html">Philosophies</a></li>
+              <li><a href="laws.html">Laws</a></li>
+              <li><a href="trivias.html">Trivias</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-wrapper">
+      <div class="head">
+        <img src="Assets/images/quiz.jpg">
+      </div>
+      <div class="law-content">
+        <div class="onecolumn" style="background-color:#f2d8b3;">
+          <div class="start-wrapper" id="start-wrapper">
+            <h1>LIFE OF RIZAL - QUIZ</h1>
+            <p>The quiz consists of 10 questions about the life of Rizal</p>
+            <button class="quiz-but" onclick="startquiz()">START QUIZ</button>
+          </div>
+          <div class="quiz-wrapper" id="quiz-wrapper">
+            <div class="quiz-container">
+              <div id="quiz" class="quiz"></div>
+              <div id="results"></div>
+            </div>
+            <button class="quiz-but" id="previous">Previous Question</button>
+            <button class="quiz-but" id="next">Next Question</button>
+            <button class="quiz-but" id="submit">Submit Quiz</button>
+            <button class="quiz-but" id="restart" onclick="reload()">Restart Quiz</button>
+          </div>
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+
+    (function() {
+    const myQuestions = [
+      {
+        question: "What is the full name of Jose Rizal?",
+        answers: {
+          a: "Jose Pascasio Rizal Mercad y Alonzo Realonda",
+          b: "Jose Protacio Mercado Rizal y Alonzo",
+          c: "Jose Protacio Mercado Rizal y Realonda Alonzo",
+          d: "José Protasio Rizal Mercado Y Alonso Realonda"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Jose Rizal's first teacher.",
+        answers: {
+          a: "Gregorio Alonso",
+          b: "Paciano Mercado Rizal",
+          c: "Teodora Alonso Realonda",
+          d: "Prof. Wilhelm "
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "The ninth child of Francisco and Teodora who was an epileptic and died a spinster.",
+        answers: {
+          a: "Josefa",
+          b: "Concepcion",
+          c: "Soledad",
+          d: "Mercado"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "In what school did Jose Rizal finish his medical course?",
+        answers: {
+          a: "Universidad Central de Madrid",
+          b: "Ateneo",
+          c: "University of Santo Tomas",
+          d: "University of the Philippines"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Our national hero was born on __________.",
+        answers: {
+          a: "June 16, 1869",
+          b: "June 19, 1861",
+          c: "June 18, 1861",
+          d: "June 13 1865"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Jose Rizal was fondly called ____________ by his family and friends.",
+        answers: {
+          a: "Totoy",
+          b: "Pelipe",
+          c: "Dodong",
+          d: "Pepe"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Jose Rizal died at the age of ______________.",
+        answers: {
+          a: "33",
+          b: "35",
+          c: "38",
+          d: "37"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "The Rizal family had this many siblings",
+        answers: {
+          a: "13",
+          b: "7",
+          c: "9",
+          d: "11"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Jose Rizal was the ____ of eleven children. ",
+        answers: {
+          a: "Fifth",
+          b: "Seventh",
+          c: "Ninth",
+          d: "Second"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Rizal started his formal schooling in",
+        answers: {
+          a: "Calamba",
+          b: "San Pablo",
+          c: "Biñan",
+          d: "Nueva Ecija"
+        },
+        correctAnswer: "c"
+      }
+
+    ];
+
+    function buildQuiz() {
+      // we'll need a place to store the HTML output
+      const output = [];
+      var count=0;
+
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        count++;
+        // we'll want to store the list of answer choices
+        const answers = [];
+
+        // and for each available answer...
+        for (letter in currentQuestion.answers) {
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+               <input type="radio" name="question${questionNumber}" value="${letter}">
+                ${letter} :
+                ${currentQuestion.answers[letter]}
+             </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="num-ques"> QUESTION NO. `+count+` </div>
+             <div class="question"> ${currentQuestion.question} </div>
+             <div class="answers"> ${answers.join("")} </div>
+           </div>`
+        );
+      });
+
+      // finally combine our output list into one string of HTML and put it on the page
+      quizContainer.innerHTML = output.join("");
+    }
+
+    function showResults() {
+      // gather answer containers from our quiz
+      const answerContainers = quizContainer.querySelectorAll(".answers");
+
+      // keep track of user's answers
+      let numCorrect = 0;
+
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        // find selected answer
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        // if answer is correct
+        if (userAnswer === currentQuestion.correctAnswer) {
+          // add to the number of correct answers
+          numCorrect++;
+
+          // color the answers green
+          answerContainers[questionNumber].style.color = "#6c9575";
+        } else {
+          // if answer is wrong or blank
+          // color the answers red
+          answerContainers[questionNumber].style.color = "red";
+        }
+      });
+
+      // show number of correct answers out of total
+      quizContainer.style.display = "none";
+      restartButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+      previousButton.style.display = "none";
+      resultsContainer.innerHTML = `Your Result: <b> ${numCorrect} </b> out of <b> ${myQuestions.length} </b>`;
+      resultsContainer.style.display = "block";
+    }
+
+    function showSlide(n) {
+      slides[currentSlide].classList.remove("active-slide");
+      slides[n].classList.add("active-slide");
+      currentSlide = n;
+      
+      if (currentSlide === 0) {
+        previousButton.style.display = "none";
+      } else {
+        previousButton.style.display = "inline-block";
+      }
+      
+      if (currentSlide === slides.length - 1) {
+        nextButton.style.display = "none";
+        submitButton.style.display = "inline-block";
+      } else {
+        nextButton.style.display = "inline-block";
+        submitButton.style.display = "none";
+        restartButton.style.display = "none";
+      }
+    }
+
+    function showNextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function showPreviousSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    const quizContainer = document.getElementById("quiz");
+    const resultsContainer = document.getElementById("results");
+    const submitButton = document.getElementById("submit");
+    const restartButton = document.getElementById("restart");
+
+    // display quiz right away
+    buildQuiz();
+
+    const previousButton = document.getElementById("previous");
+    const nextButton = document.getElementById("next");
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    showSlide(0);
+
+    // on submit, show results
+    submitButton.addEventListener("click", showResults);
+    previousButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+  })();
+
+  function reload() {
+    location.reload();
+  }
+
+  function startquiz(){
+    const start = document.getElementById("start-wrapper");
+    const quiz = document.getElementById("quiz-wrapper");
+
+    start.style.display = "none";
+    quiz.style.display = "block";
+  }
+
+      function checkScroll(){
+      var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+      if($(window).scrollTop() > startY){
+          $('.navbar').addClass("scrolled");
+      }else{
+          $('.navbar').removeClass("scrolled");
+      }
+  }
+
+  if($('.navbar').length > 0){
+      $(window).on("scroll load resize", function(){
+          checkScroll();
+      });
+  }
+
+  $("figure").mouseleave(
+      function() {
+        $(this).removeClass("hover");
+      }
+    );
+
+  </script>
+
+</html>

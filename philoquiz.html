@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="">
+
+      <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+      <title>ProjectRizal | QUIZ</title>
+
+      <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+      <link href="Assets/css/style3.css" rel="stylesheet" />
+      <script src="Assets/js/jquery.min.js"></script>
+    	<script src="Assets/js/bootstrap.js"></script>
+
+  </head>
+  <body>
+
+    <header class="header-home">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+          </div>
+          <div id="navbar3" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="life.html">Life</a></li>
+              <li><a href="works.html">Works</a></li>
+              <li class="active1"><a href="philosophies.html">Philosophies</a></li>
+              <li><a href="laws.html">Laws</a></li>
+              <li><a href="trivias.html">Trivias</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-wrapper">
+      <div class="head">
+        <img src="Assets/images/quiz.jpg">
+      </div>
+      <div class="law-content">
+        <div class="onecolumn" style="background-color:#f2d8b3;">
+          <div class="start-wrapper" id="start-wrapper">
+            <h1>RIZAL'S PHILOSOPHIES - QUIZ</h1>
+            <p>The quiz consists of 10 questions about philosophies related to Rizal</p>
+            <button class="quiz-but" onclick="startquiz()">START QUIZ</button>
+          </div>
+          <div class="quiz-wrapper" id="quiz-wrapper">
+            <div class="quiz-container">
+              <div id="quiz" class="quiz"></div>
+              <div id="results"></div>
+            </div>
+            <button class="quiz-but" id="previous">Previous Question</button>
+            <button class="quiz-but" id="next">Next Question</button>
+            <button class="quiz-but" id="submit">Submit Quiz</button>
+            <button class="quiz-but" id="restart" onclick="reload()">Restart Quiz</button>
+          </div>
+        </div>
+        <div class="footer">
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+
+    (function() {
+    const myQuestions = [
+      {
+        question: "What is Philosophy?",
+        answers: {
+          a: "defined as the study and pursuit of facts",
+		  b: "person engaged or learned in philosophy, especially as an academic discipline",
+		  c: "the scientific study of the human mind and its functions",
+          d: "lack of religious belief or an absence of faith"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Which one is not mentioned in the philosophies in life?",
+        answers: {
+          a: "Educational Philosophy",
+          b: "Works Philosophy",
+          c: "Ethics Philosophy",
+          d: "Life Philosophy"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Rizal grew up by a closely-knit _____ family.",
+        answers: {
+          a: "Islam",
+          b: "Catholic",
+          c: "Buddhism",
+          d: "None of the above"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "What is the political view of rizal?",
+        answers: {
+          a: "A conquered country like the Philippines should not be taken advantage",
+		  b: "Philippines should be developed and uncivilized",
+          c: "He would run as part of the government to rule the country",
+          d: "Rizal agreed of oppression and barbarity"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "What was/were the sudden change/s in rizal’s religious outlook?",
+		answers: {
+		  a: "Rizal did not agree with the prevailing Christian propagation",
+		  b: "Rizal believes in the Catholic dogma that salvation was only for Catholics",
+		  c: "He agreed to the superstitious beliefs propagated by the priests in the church and in the schools",
+		  d: "All of these"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "The study of human behavior as to whether it is good or bad or whether it is right or wrong is that science upon which rizal’s ___ philosophy was based.",
+		answers: {
+          a: "Educational Philosophy",
+          b: "Works Philosophy",
+          c: "Ethical Philosophy",
+          d: "Life Philosophy"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "That body of knowledge relating to society including the wisdom which man's experience in society has taught him is _____ philosophy.",
+		answers: {
+          a: "Ethical Philosophy",
+          b: "Educational Philosophy",
+          c: "Political Philosophy",
+          d: "Social Philosophy"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "What is the moral status of the philippines during this period?",
+		answers: {
+          a: "There is freedom around the country during this period",
+          b: "People enjoys life and individual rights",
+          c: "The predominance of foreign masters is Philippines",
+          d: "None of the above"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Rizal’s social philosophy dealt with: <br> <b>I.</b> influential factors in human anatomy <b>II.</b> man in society <b>III.</b> reforms <b>IV.</b> future Philippines.",
+		answers: {
+          a: "I and II only",
+          b: "III only",
+          c: "I, II, and IV only",
+          d: "I, II, III and IV"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "All of the above served as rizal’s guide in his continuous effort to make over his beloved philippines. Except:",
+		answers: {
+          a: "His desire to possess own happiness",
+          b: "The change of his mentality",
+          c: "The need for elevating and inspiring mission",
+          d: "The ability to think, aspire and strive to rise"
+        },
+        correctAnswer: "a"
+      }
+
+    ];
+
+    function buildQuiz() {
+      // we'll need a place to store the HTML output
+      const output = [];
+      var count=0;
+
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        count++;
+        // we'll want to store the list of answer choices
+        const answers = [];
+
+        // and for each available answer...
+        for (letter in currentQuestion.answers) {
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+               <input type="radio" name="question${questionNumber}" value="${letter}">
+                ${letter} :
+                ${currentQuestion.answers[letter]}
+             </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="num-ques"> QUESTION NO. `+count+` </div>
+             <div class="question"> ${currentQuestion.question} </div>
+             <div class="answers"> ${answers.join("")} </div>
+           </div>`
+        );
+      });
+
+      // finally combine our output list into one string of HTML and put it on the page
+      quizContainer.innerHTML = output.join("");
+    }
+
+    function showResults() {
+      // gather answer containers from our quiz
+      const answerContainers = quizContainer.querySelectorAll(".answers");
+
+      // keep track of user's answers
+      let numCorrect = 0;
+
+      // for each question...
+      myQuestions.forEach((currentQuestion, questionNumber) => {
+        // find selected answer
+        const answerContainer = answerContainers[questionNumber];
+        const selector = `input[name=question${questionNumber}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        // if answer is correct
+        if (userAnswer === currentQuestion.correctAnswer) {
+          // add to the number of correct answers
+          numCorrect++;
+
+          // color the answers green
+          answerContainers[questionNumber].style.color = "#6c9575";
+        } else {
+          // if answer is wrong or blank
+          // color the answers red
+          answerContainers[questionNumber].style.color = "red";
+        }
+      });
+
+      // show number of correct answers out of total
+      quizContainer.style.display = "none";
+      restartButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+      previousButton.style.display = "none";
+      resultsContainer.innerHTML = `Your Result: <b> ${numCorrect} </b> out of <b> ${myQuestions.length} </b>`;
+      resultsContainer.style.display = "block";
+    }
+
+    function showSlide(n) {
+      slides[currentSlide].classList.remove("active-slide");
+      slides[n].classList.add("active-slide");
+      currentSlide = n;
+      
+      if (currentSlide === 0) {
+        previousButton.style.display = "none";
+      } else {
+        previousButton.style.display = "inline-block";
+      }
+      
+      if (currentSlide === slides.length - 1) {
+        nextButton.style.display = "none";
+        submitButton.style.display = "inline-block";
+      } else {
+        nextButton.style.display = "inline-block";
+        submitButton.style.display = "none";
+        restartButton.style.display = "none";
+      }
+    }
+
+    function showNextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function showPreviousSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    const quizContainer = document.getElementById("quiz");
+    const resultsContainer = document.getElementById("results");
+    const submitButton = document.getElementById("submit");
+    const restartButton = document.getElementById("restart");
+
+    // display quiz right away
+    buildQuiz();
+
+    const previousButton = document.getElementById("previous");
+    const nextButton = document.getElementById("next");
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    showSlide(0);
+
+    // on submit, show results
+    submitButton.addEventListener("click", showResults);
+    previousButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+  })();
+
+  function reload() {
+    location.reload();
+  }
+
+  function startquiz(){
+    const start = document.getElementById("start-wrapper");
+    const quiz = document.getElementById("quiz-wrapper");
+
+    start.style.display = "none";
+    quiz.style.display = "block";
+  }
+
+      function checkScroll(){
+      var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+      if($(window).scrollTop() > startY){
+          $('.navbar').addClass("scrolled");
+      }else{
+          $('.navbar').removeClass("scrolled");
+      }
+  }
+
+  if($('.navbar').length > 0){
+      $(window).on("scroll load resize", function(){
+          checkScroll();
+      });
+  }
+
+  $("figure").mouseleave(
+      function() {
+        $(this).removeClass("hover");
+      }
+    );
+
+  </script>
+
+</html>

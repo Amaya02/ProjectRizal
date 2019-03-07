@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+    <title>ProjectRizal | Religious Philosophy</title>
+
+    <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/css/style3.css" rel="stylesheet" />
+    <script src="Assets/js/jquery.min.js"></script>
+  	<script src="Assets/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+    <header class="header-home">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="life.html">Life</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li class="active1"><a href="philosophies.html">Philosophies</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li><a href="trivias.html">Trivias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="header">
+        <span class="content-head">Religious Philosophy</span>
+    </div>
+    <div class="law-content">
+        <div class="column">
+            <img src="Assets/images/educ.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <h1>RELIGION is a cultural system of designated behaviors and practices, morals, worldviews, texts, sanctified places, prophecies, ethics, or organizations, that relates humanity to supernatural, transcendental, or spiritual elements. However, there is no scholarly consensus over what precisely constitutes a religion.</h1>
+          </div>
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+           <div class="hideme">
+
+            <p class="left">Rizal grew up nurtured by a closely-knit Catholic family, was educated in the foremost Catholic schools of the period in the elementary, secondary and college levels; logically, therefore, he should have been a propagator of strictly Catholic traditions. However, in later life, he developed a life philosophy of a different nature, a philosophy of a different Catholic practice intermingled with the use of Truth and Reason.</p>
+			
+            <p class="left">Why the change?</p>
+			
+            <p class="left">It could have been the result of contemporary contact, companionship, observation, research and the possession of an independent spirit.Being a critical observer, a profound thinker and a zealous reformer, Rizal did not agree with the prevailing Christian propagation of the Faith by fire and sword. This is shown in his Annotation of Morga’s Sucesos de las Islas Filipinas.</p>
+			
+            <p class="left">Rizal did not believe in the Catholic dogma that salvation was only for Catholics and that outside Christianity, salvation was not possible even if Catholics composed only a small minority of the world’s religious groups. Nor did he believe in the Catholic observation of fasting as a sacrifice, nor in the sale of such religious items as the cross, medals, rosaries and the like in order to propagate the Faith and raise church funds. He also lambasted the superstitious beliefs propagated by the priests in the church and in the schools. All of these and a lot more are evidences of Rizal’s religious philosophy.</p>
+
+			</div>
+          </div>
+
+          <div class="footer">
+            Reference: http://www.joserizal.ph/ph01.html
+          </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+
+<script>
+
+  $(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'margin-top':'0'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+
+</script>
+
+</html>

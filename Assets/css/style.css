@@ -1,5 +1,29 @@
+@font-face {
+  font-family: font1;
+  src: url("../fonts/javacom.otf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("../fonts/assis.otf");
+}
+
+@font-face {
+  src: url('../fonts/oreg.ttf');
+  font-family: font3;
+}
+
 body{
   background-color: #000;
+}
+
+li{
+  font-family: "font2";
+}
+
+h3{
+  font-family: "font1";
+  font-weight: bold;
 }
 
 html,body{height:100%;}
@@ -24,6 +48,7 @@ text-transform: uppercase;
 border-radius: 6px;
 display: inline-block;
 margin-bottom: 20px;
+font-family: "font3";
 }
 
 .but-home:hover {

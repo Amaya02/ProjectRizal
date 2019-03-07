@@ -12,7 +12,7 @@
 
       <link href="Assets/css/bootstrap.css" rel="stylesheet" />
       <link href="Assets/css/style3.css" rel="stylesheet" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="Assets/js/jquery.min.js"></script>
     	<script src="Assets/js/bootstrap.js"></script>
 
   </head>
@@ -56,9 +56,9 @@
           </div>
           <div class="quiz-wrapper" id="quiz-wrapper">
             <div class="quiz-container">
-              <div id="quiz"></div>
+              <div id="quiz" class="quiz"></div>
+              <div id="results"></div>
             </div>
-            <div id="results"></div>
             <button class="quiz-but" id="previous">Previous Question</button>
             <button class="quiz-but" id="next">Next Question</button>
             <button class="quiz-but" id="submit">Submit Quiz</button>
@@ -77,7 +77,7 @@
     (function() {
     const myQuestions = [
       {
-        question: "An act to include in the curricula of all public and private Schools, Colleges and Universities courses on the Life Works and Writings of JOSE RIZAL, particularly his novels NOLI ME TANGERE and EL FILIBUSTERISMO, Authorizing the Printing and Distribution Thereof, and for Other Purposes.?",
+        question: "An act to include in the curricula of all public and private Schools, Colleges and Universities courses on the Life Works and Writings of JOSE RIZAL, particularly his novels NOLI ME TANGERE and EL FILIBUSTERISMO, Authorizing the Printing and Distribution Thereof, and for Other Purposes",
         answers: {
           a: "RA 1425",
           b: "RA 229",
@@ -249,7 +249,8 @@
       restartButton.style.display = "inline-block";
       submitButton.style.display = "none";
       previousButton.style.display = "none";
-      resultsContainer.innerHTML = `Your Result: ${numCorrect} out of ${myQuestions.length}`;
+      resultsContainer.innerHTML = `Your Result: <b> ${numCorrect} </b> out of <b> ${myQuestions.length} </b>`;
+      resultsContainer.style.display = "block";
     }
 
     function showSlide(n) {

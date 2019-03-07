@@ -1,6 +1,23 @@
+@font-face {
+  font-family: font1;
+  src: url("../fonts/javacom.otf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("../fonts/assis.otf");
+}
+
+
 body{
   background-color: #fff;
 }
+
+h1{
+  font-family: "font1";
+  font-weight: bold;
+}
+
 
 html,body{height:100%;}
 
@@ -65,7 +82,7 @@ nav .container{
 .navbar-inverse .navbar-nav>li>a{
    color:#fff;
    cursor: pointer;
-   font-family:copper;
+   font-family:"font2";
    font-weight: bold;
    font-size: 1.3em;
 }
@@ -76,7 +93,6 @@ nav .container{
 
 .navbar-inverse .navbar-nav>.active1>a{
 	color: #f3cda9;
-	text-decoration: underline;
 
 }
 
@@ -170,7 +186,8 @@ figure.snip1105 {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  display: inline-block;
+  width: 90%;
   background: #000000;
   color: #ffffff;
   text-align: center;

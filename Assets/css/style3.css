@@ -1,6 +1,25 @@
+@font-face {
+  font-family: font1;
+  src: url("../fonts/javacom.otf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("../fonts/assis.otf");
+}
+
+@font-face {
+  font-family: font3;
+  src: url("../fonts/patrickhand.ttf");
+}
+
 body{
   background-color: #fff;
-  font-size: 15px;
+}
+
+p{
+  font-family: "font2";
+    font-size: 18px;
 }
 
 
@@ -9,6 +28,14 @@ body{
 }
 
 html,body{height:100%;}
+
+.content-head{
+  font-family: "font1"; 
+}
+
+.question, .answers{
+  font-family: "font2";
+}
 
 .navbar {
     -webkit-transition: all 0.6s ease-out;
@@ -71,7 +98,7 @@ nav .container{
 .navbar-inverse .navbar-nav>li>a{
    color:#fff;
    cursor: pointer;
-   font-family:copper;
+   font-family:"font2";
    font-weight: bold;
    font-size: 1.3em;
 }
@@ -82,7 +109,6 @@ nav .container{
 
 .navbar-inverse .navbar-nav>.active1>a{
   color: #f3cda9;
-  text-decoration: underline;
 
 }
 
@@ -168,7 +194,7 @@ nav .container{
   width: 100%;
   margin-top: 130px;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
   color: #fff;
 
 }
@@ -199,7 +225,13 @@ nav .container{
   display:flex;
     align-items: center;
     justify-content: center;
-    
+    overflow: auto;
+}
+
+.column h1,
+.onecolumn h1{
+  font-family: "font3";
+  font-size: 38px;
 }
 
 .column p,
@@ -263,9 +295,10 @@ nav .container{
   height: 500px;
 }
 
-.num-ques{
-  font-size: 35px;
+.num-ques, #results{
+  font-size: 45px;
   font-weight: bold;
+  font-family: "font3";
 }
 
 .question{
@@ -284,7 +317,7 @@ nav .container{
   margin-bottom: 10px;
 }
 .quiz-but{
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'font2', sans-serif;
     font-size: 15px;
     background-color: #a23419;
     color: #fff;
@@ -293,7 +326,7 @@ nav .container{
     padding: 15px;
     cursor: pointer;
     margin-bottom: 20px;
-    margin-top: 15%;
+    margin-top: 30px;
     transition: all 0.4s ease-out;
 }
 .quiz-but:hover{
@@ -301,16 +334,18 @@ nav .container{
 }
 
 #results{
-  font-size: 20px;
-  padding-bottom: 30px;
+  font-size: 45px;
   text-transform: uppercase;
+  padding: 5% 0;
+  display: none;
 }
 
 .start-wrapper h1{
-  font-size: 50px;
+  font-size: 70px;
   font-weight: bold;
   text-align: center;
   padding: 25px;
+  font-family: "font3";
 }
 
 .start-wrapper button{
@@ -346,8 +381,10 @@ nav .container{
 }
 .quiz-container{
   position: relative;
-  height: 200px;
+  height: 420px;
   margin-top: 40px;
+  overflow: auto;
+  padding: 5% 0;
 }
 
 /* FOOTER */
@@ -364,6 +401,18 @@ nav .container{
 /* Clear floats after the columns */
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 1024px) {
+  .column {
+    display:block;
+  }
+
+  .quiz-container{
+    height: 400px;
+}
+
+}
+
 @media screen and (max-width: 992px) {
   .column {
     width: 100%;
@@ -397,5 +446,13 @@ nav .container{
         margin: 0;
         margin-top: 10px;
       }
+
+      
       
 }
+
+@media (max-width: 320px) {
+  .quiz-but{
+    margin-top: 10px;
+  }
+  }

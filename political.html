@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="">
+
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url(); ?>ICON.png" /> -->
+
+    <title>ProjectRizal | Political Philosophy</title>
+
+    <link href="Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/css/style3.css" rel="stylesheet" />
+    <script src="Assets/js/jquery.min.js"></script>
+  	<script src="Assets/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+    <header class="header-home">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <div id="navbar3" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="life.html">Life</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li class="active1"><a href="philosophies.html">Philosophies</a></li>
+            <li><a href="laws.html">Laws</a></li>
+            <li><a href="trivias.html">Trivias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="header">
+        <span class="content-head">Political Philosophy</span>
+    </div>
+    <div class="law-content">
+        <div class="column">
+            <img src="Assets/images/political.jpg" alt="sample33" />
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <h1>POLITICS. Refers to a set of activities associated with the governance of a country, or an area. It involves making decisions that apply to members of a group. It refers to achieving and exercising positions of governance—organized control over a human community, particularly a state.</h1>
+          </div>
+          <div class="onecolumn" style="background-color:#f2d8b3;">
+            <div class="hideme">
+              <p>In Rizal’s political view, a conquered country like the Philippines should not be taken advantage of but rather should be developed, civilized, educated and trained in the science of self-government.</p>
+            
+			  <p>He bitterly assailed and criticized in publications the apparent backwardness of the Spanish ruler’s method of governing the country which resulted in: </p>
+			
+			</div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>The bondage and slavery of the conquered;</p>
+			</div>
+          </div>
+          <div class="column" style="background-color:#fbd226;">
+            <div class="hideme">
+              <h1>NUMBER 1</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#84d0c4;">
+            <div class="hideme">
+              <h1>NUMBER 2</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>The Spanish government’s requirement of forced labor and force military service upon the natives;</p>
+			</div>
+		  </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>The abuse of power by means of exploitation;</p>
+			</div>
+          </div>
+          <div class="column" style="background-color:#d6f1c4;">
+            <div class="hideme">
+              <h1>NUMBER 3</h1>
+            </div>
+            </div>
+          <div class="column" style="background-color:#98c4d1;">
+            <div class="hideme">
+              <h1>NUMBER 4</h1>
+            </div>
+          </div>
+          <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>The government ruling that any complaint against the authorities was criminal; and</p>
+            </div>
+          </div>
+		  <div class="column" style="background-color:#fff;">
+            <div class="hideme">
+              <p>Making the people ignorant, destitute and fanatic, thus discouraging the formation of a national sentiment.</p>
+			</div>
+          </div>
+		  <div class="column" style="background-color:#98c4f1;">
+            <div class="hideme">
+              <h1>NUMBER 5</h1>
+            </div>
+          </div>
+
+          <div class="footer">
+            Reference: http://www.joserizal.ph/ph01.html
+          </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+
+<script>
+
+  $(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'margin-top':'0'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+}
+
+if($('.navbar').length > 0){
+    $(window).on("scroll load resize", function(){
+        checkScroll();
+    });
+}
+
+</script>
+
+</html>
